@@ -20,7 +20,7 @@ body{
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    width: 100%;
+    max-width: 100%;
     margin-top: 20px;
     
 }
@@ -43,6 +43,11 @@ nav ul li{
     padding: 10px 20px;
     font-size: 14px;
 
+}
+nav ul li:hover{
+    background-color: rgb(226, 76, 108);
+    border-radius: 2px;
+    
 }
 nav ul li a{
     color: white;
@@ -78,9 +83,11 @@ nav ul li a{
     margin-left: 0;
 } 
 
+/* -------------------- Top Banner --------------- */
 
 .top-banner{
     display: flex; 
+    max-width: 100%;
     height: 530px;
     margin: 0 120px;
     justify-content: space-between;
@@ -88,7 +95,7 @@ nav ul li a{
     
 }
 .banner-heading{
-    width: 485px;
+    max-width: 485px;
     margin-top: 25px;
 }
 .banner-heading h1{
@@ -113,8 +120,12 @@ nav ul li a{
     padding-left: 8px;
 }
 .banner-image{
-    width: 556px;
+    max-width: 556px;
     height: 438px;
+}
+.banner-image img{
+    max-width: 100%;
+    display: block;
 }
 
 /*-------------Player Section---------------*/
@@ -136,7 +147,6 @@ nav ul li a{
 }
 
 .player{
-    /* border: 3px solid aquamarine; */
     padding: 0 15px;
     width: 280px;
     box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
@@ -229,6 +239,154 @@ footer p{
     font-weight: 400;
 }
 
-@media (max-width: 500px) {
 
+/* --------------------------------------------------------------------------------------------------
+-------------------------                      Media-Query             ------------------------------
+---------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 700px){
+   
+    .navbar{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: unset;
+    }
+
+    .nav-icon{
+        display: block;
+        width: 130px;
+        padding-top: 30px;
+        padding-left: 30px;
+        font-size: 18px;
+    }
+    
+    .navbar ul{
+        display:block;
+        height: auto;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .navbar ul li{
+        text-align: center;
+    }
+    .login-container{
+        position: fixed;
+        right: 30px;
+        margin-right:0 ;
+    }
+    /* ---------------------------------------- Top Banner ------------------------------------------ */
+    .top-banner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        height: auto;
+    
+    }
+    .banner-heading{
+        width: 100%;
+
+    }
+    .banner-heading h1{
+        font-size: 36px;
+        width: 100%;
+    }
+    .banner-heading p{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .banner-img{
+        margin-top: 40px;
+        width: 100%;
+        
+    }
+    .banner-img img{
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* --------------------------------------Player Section----------------------------------- */
+
+    .player-section{
+        background-color: white;
+        padding-top: 50px;
+       
+    }
+
+    .player-list{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;  
+    }
+
+    .player{
+        width: auto;
+    }
+
+    /*---------------------Highlights Section---------------*/
+
+    .highlights-section{
+        width: 100%;
+        padding-top: 50px;
+    }
+    .highlights{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     
+    }
+    .highlights-caption{
+        margin-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .highlights-caption h1{
+        font-size: 30px;
+        color: black;
+      
+    }
+    .highlights-caption p{
+        color: #6c6c6c;
+        font-size: 16px;
+        margin-right: 0;
+        padding: auto;
+    }
+   
+    .watch-btn p{
+        color: white;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    }
+    .highlights-image{
+        padding: 20px;
+    }
+    .highlights-image img{
+        max-width: 100%;
+        
+    }
+
+    /* ---------------------------------End Section ------------------------------*/
+
+    .end-section{
+        padding-top: 20px;
+    }
+    .logo{
+        width: 100%;
+        text-align: center;
+    }
+    .logo img{
+        max-width: 70%;
+    }
 }
+
+
