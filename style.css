@@ -24,6 +24,10 @@ body{
     margin-top: 20px;
     
 }
+#check-btn{
+    position: absolute;
+    display: none;
+}
 .nav-icon{
     box-sizing: border-box;
     height: 80px;
@@ -251,8 +255,25 @@ footer p{
         display: flex;
         flex-direction: row;
         justify-content: unset;
+        position: relative;
     }
 
+    #check-btn{
+        display: block;
+        opacity: 0;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        left: 10px;          /*----Hide burger menu--*/
+    }
+
+    #check-btn:checked ~ ul{
+        display: block;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 1s ease-in-out;
+    }
+  
     .nav-icon{
         display: block;
         width: 130px;
@@ -262,19 +283,41 @@ footer p{
     }
     
     .navbar ul{
-        display:block;
+        display: block;
         height: auto;
+        width: 100%;
+        margin-top: 100px;
         margin-left: 0;
         padding-left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        background-color: #081F2C; 
+        
+        transform-origin: -100% 0%;
+        transform: translate(0, 0);
+        transition: transform 1s ease-in-out;
+        
     }
     .navbar ul li{
         text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        line-height: 32px;
+
+    }
+    .navbar ul li:hover{
+        background-color: rgb(226, 76, 108);
+    }
+    .navbar ul li a{
+        color: white;
+        font-weight: 500;
     }
     .login-container{
-        position: fixed;
+        position: absolute;
         right: 30px;
         margin-right:0 ;
     }
+
     /* ---------------------------------------- Top Banner ------------------------------------------ */
     .top-banner{
         display: flex;
@@ -388,5 +431,3 @@ footer p{
         max-width: 70%;
     }
 }
-
-
